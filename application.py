@@ -1,8 +1,7 @@
 '''create fles'''
 import time
 import os
-import os.path
-import mock
+
 import sys
 #to clear screen
 def reset():
@@ -89,7 +88,7 @@ def delete():
         raw_input("--- Press Enter  ")
         menu()
 #function for delete file 
-def remove(verify):
+def remove1(verify):
     os.remove(verify + '.txt')
 
 if __name__ == '__main__':
