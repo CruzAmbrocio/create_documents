@@ -61,17 +61,13 @@ def creation():
         print "   "
         raw_input("--- Press Enter to create ")
         create(file_name)
+        menu()
 #function for creation file
 def create(name_file):
-    archi = open(name_file, 'w')
-    archi.close()
-    time.sleep(0.5)
-    print "-- Document Created --"
-    time.sleep(1)
-    menu()
+    if os.path.isfile(name_file) == False:
+        open(name_file, 'w').close()
 
 def preparate():
-#verification existence of file
     file_name = name()
     is_file = verification(file_name)
     if is_file == True:
@@ -90,18 +86,10 @@ def preparate():
         raw_input("--- Press Enter  ")
         menu()
 
-#verification existence of file
+#delete file 
 def delete(file_name):
     if os.path.isfile(file_name):
         os.remove(file_name)
-        print ""
-        print "archivo eliminado ", file_name
-    else:
-        print "   "
-
-
-
-#function for delete file 
-
 if __name__ == '__main__':
     menu()
+
